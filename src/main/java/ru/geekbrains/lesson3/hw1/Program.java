@@ -46,14 +46,14 @@ public class Program {
         //Не понимаю о чем это, видимо что-то с transiet связано, без этого исключения падают. Нашел в Web
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-        Student studentJSON =(Student) objectMapper.readValue(new File(FILE_JSON),Student.class);
+        Student studentJSON =objectMapper.readValue(new File(FILE_JSON),Student.class);
         System.out.println("Объект UserData десериализован (JSON).");
         System.out.println(studentJSON);
 
         //Не понимаю о чем это, видимо что-то с transiet связано, без этого исключения падают. Нашел в Web
         xmlMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-        Student studentXML=(Student) xmlMapper.readValue(new File(FILE_XML),Student.class);
+        Student studentXML=xmlMapper.readValue(new File(FILE_XML),Student.class);
         System.out.println("Объект UserData десериализован (XML).");
         System.out.println(studentXML);
 
